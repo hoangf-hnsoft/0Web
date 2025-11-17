@@ -1,0 +1,149 @@
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f7;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+    z-index: 999;
+}
+
+/* Logo bên trái */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #7a3fa0;
+}
+
+/* Nút Zalo nằm giữa */
+.join-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #7a3fa0;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.join-btn:hover {
+    opacity: 0.85;
+}
+
+/* Khối trống để cân bằng */
+.right-space {
+    width: 120px;
+}
+
+/* PRODUCT LIST */
+.product-section {
+    padding-top: 130px; /* để tránh bị header che */
+    text-align: center;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.product-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    transition: 0.25s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 20px;
+    color: #7a3fa0;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.buy-btn {
+    display: inline-block;
+    background: #7a3fa0;
+    padding: 10px 18px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.buy-btn:hover {
+    opacity: 0.85;
+}
+
+/* CONTACT */
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+/* MOBILE LAYOUT */
+@media screen and (max-width: 600px) {
+
+    .header {
+        height: auto; 
+        padding: 10px 0;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        position: fixed;
+        top: 0;
+    }
+
+    .logo {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* Nút Zalo xuống hàng dưới */
+    .join-btn {
+        position: static;        /* bỏ absolute */
+        transform: none;
+        margin-top: 5px;
+    }
+
+    /* bỏ khối cân bằng bên phải */
+    .right-space {
+        display: none;
+    }
+
+    /* đẩy nội dung xuống thấp hơn vì header cao hơn */
+    .product-section {
+        padding-top: 160px !important;
+    }
+}
